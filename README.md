@@ -1,17 +1,40 @@
-# Extending the Basic JWKS Server
+# Extended JWKS Server Project
 
-## Objective
+## Project Overview
 
-This project aims to enhance a JWKS server to protect against SQL injection vulnerabilities by utilizing a SQLite database to store private keys. By integrating a database, we ensure that private keys are persisted to disk, allowing availability even after server restarts. This project emphasizes secure SQL query handling to prevent injection attacks.
+This project involves extending a JWKS (JSON Web Key Set) server to incorporate security and persistence features using SQLite. The project highlights essential cybersecurity concepts by protecting the server against SQL injection vulnerabilities and ensuring private keys are stored securely. This server is crucial in modern authentication systems as it serves public keys for verifying JSON Web Tokens (JWTs). 
 
-## Background
+### Objectives
 
-SQLite is a serverless, single-file database. This project modifies the previous implementation to:
-- Create/open a SQLite DB file on startup.
-- Write private keys to the database.
-- Modify the `POST /auth` and `GET /.well-known/jwks.json` endpoints to use the database.
+- Securely store private keys in an SQLite database.
+- Ensure keys persist across server restarts, making them available for JWT verification at any time.
+- Protect SQL interactions from injection attacks.
+- Serve a RESTful API capable of providing valid JWTs and public keys through specific endpoints.
+
+---
+
+## Key Features
+
+- **Secure Database Storage**: Private keys are securely stored in an SQLite database to prevent unauthorized access.
+- **SQL Injection Protection**: Ensures all SQL interactions are protected against injection attacks by using parameterized queries.
+- **JWT Issuance with Expiration Control**: Generates JWTs that can either be valid or expired, depending on the request.
+- **Public Key Retrieval in JWKS Format**: Enables external applications to verify JWTs by accessing the server's public keys.
+
+---
 
 ## Requirements
+
+### Environment Setup
+
+- **Python**: Ensure Python 3.7 or newer is installed.
+- **SQLite**: SQLite should be installed (it's generally included with most Python installations).
+
+### Dependencies
+
+Install all dependencies using:
+```bash
+pip install -r requirements.txt
+
 
 ### SQLite Backed Storage
 
@@ -23,3 +46,5 @@ SQLite is a serverless, single-file database. This project modifies the previous
       key BLOB NOT NULL,
       exp INTEGER NOT NULL
   );
+
+
