@@ -49,8 +49,7 @@ pip install -r requirements.txt
 
 ### screenshots
 ## Coverage Report
-![Project 2 Test Coverage](https://github.com/user-attachments/assets/ca0edc35-a210-47d4-911c-cc24197b1efe)
+![project2 test coverage](https://github.com/user-attachments/assets/ca4b58f6-42e6-4799-bd13-9e399288fe8b)
 
 ## Gradebot Test
-![Gradebot Test](https://github.com/user-attachments/assets/9ac58882-b865-4698-ac46-72f47023bdf3)
-
+![project 2 gradebot](https://github.com/user-attachments/assets/50241615-0e92-44f3-b2b6-b2a2584b9d9f)
