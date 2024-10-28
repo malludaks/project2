@@ -29,12 +29,9 @@ This project involves extending a JWKS (JSON Web Key Set) server to incorporate 
 - **Python**: Ensure Python 3.7 or newer is installed.
 - **SQLite**: SQLite should be installed (it's generally included with most Python installations).
 
-### Dependencies
-
 Install all dependencies using:
 ```bash
 pip install -r requirements.txt
-
 
 ### SQLite Backed Storage
 
